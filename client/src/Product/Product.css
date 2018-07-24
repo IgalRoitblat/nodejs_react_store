@@ -1,0 +1,11 @@
+.Product {
+	width: 30%;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+.Product h2 {
+	font-size: 1.5rem;
+}
