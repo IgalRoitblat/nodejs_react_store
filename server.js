@@ -1,11 +1,29 @@
 const express = require('express');
 var bodyParser = require('body-parser');
+var session = require('express-session')
 var fs = require('fs');
 let catalog = [];
 
 const app = express();
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(session({
+	resave: false,
+	saveUninitialized: true,
+	secret: 'secret Password',
+}))
 const port = process.env.PORT || 5000;
+
+app.get('/user', (req, res) => {
+	console.log(req.session.userName);
+	res.setHeader('Content-Type', 'application/json');
+	res.send({'name': req.session.userName});
+})
+app.post('/user', bodyParser.json(), (req, res) => {
+	req.session.userName = req.body.clientName
+	console.log(req.session.userName);
+	res.setHeader('Access-Control-Allow-Credentials', 'true')
+	res.send('submitted!')
+})
 
 
 app.get('/products', (req, res) => {

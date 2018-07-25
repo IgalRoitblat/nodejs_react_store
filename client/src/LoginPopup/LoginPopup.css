@@ -1,0 +1,38 @@
+.LoginPopup {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
+	opacity: 0.8;
+	z-index: 2;
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.LoginPopup h1, .LoginPopup h3 {
+	width: 100%;
+	text-align: center;
+}
+
+.LoginPopup div {
+	background-color: white;
+	padding: 1rem;
+}
+
+.LoginPopup div input {
+	color: black;
+}
+
+.LoginPopup div input::placeholder {
+	color: black;
+}
+
+.LoginPopup input {
+	width: 50%;
+	margin-right: 1rem;
+}
